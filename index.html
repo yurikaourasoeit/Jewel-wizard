@@ -291,7 +291,7 @@
                 <span class="gem-icon">💎</span>
                 <div class="gem-text-group">
                     <span id="gem-count" class="gem-count">0</span>
-                    <span class="gem-target">/ 15</span>
+                    <span class="gem-target">/ 20</span>
                 </div>
             </div>
         </div>
@@ -310,7 +310,7 @@
         <!-- Start Screen -->
         <div id="start-screen" class="overlay">
             <h1 class="title-text">✨ ジュエルウィザード ✨</h1>
-            <p class="subtitle-text">マウスやキーボードで魔法使いを自由に操作！<br>魔法を放ち、迫りくる悪魔やボスを倒して宝石を15個あつめよう！</p>
+            <p class="subtitle-text">マウスやキーボードで魔法使いを自由に操作！<br>魔法を放ち、迫りくる悪魔やボスを倒して宝石を20個あつめよう！</p>
             
             <div class="instruction-box">
                 <div class="inst-item">
@@ -323,7 +323,7 @@
                 </div>
                 <div class="inst-item">
                     <span class="inst-icon">💎</span>
-                    <span>目標: 宝石15個獲得</span>
+                    <span>目標: 宝石20個獲得</span>
                 </div>
             </div>
 
@@ -343,7 +343,7 @@
         <!-- Victory Screen -->
         <div id="victory-screen" class="overlay hidden">
             <h1 class="title-text" style="background: linear-gradient(135deg, #00f0ff, #70e000, #ffea00); -webkit-background-clip: text;">STAGE CLEAR!! 🎉</h1>
-            <p class="subtitle-text">見事に宝石を15個以上集めて世界を救った！<br>素晴らしい魔法使いの誕生だ！</p>
+            <p class="subtitle-text">見事に宝石を20個以上集めて世界を救った！<br>素晴らしい魔法使いの誕生だ！</p>
             <div style="display: flex; gap: 16px;">
                 <button id="clear-restart-btn" class="btn">もう一度あそぶ！</button>
                 <button id="clear-home-btn" class="btn" style="background: linear-gradient(135deg, #4b5563, #9ca3af);">タイトルへ戻る</button>
@@ -868,8 +868,8 @@
                     createExplosion(gem.x, gem.y, '#00f0ff', 8);
                     updateUI();
 
-                    // Victory Condition: 15 or more gems collected
-                    if (player.gems >= 15) {
+                    // Victory Condition: 20 or more gems collected
+                    if (player.gems >= 20) {
                         triggerVictory();
                     }
                 }
