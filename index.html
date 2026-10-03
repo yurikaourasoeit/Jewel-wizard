@@ -334,14 +334,20 @@
         <div id="gameover-screen" class="overlay hidden">
             <h1 class="title-text" style="background: linear-gradient(135deg, #ff2a5f, #ff7597); -webkit-background-clip: text;">GAME OVER</h1>
             <p class="subtitle-text" id="gameover-reason">魔法使いのHPがゼロになってしまった…</p>
-            <button id="restart-btn" class="btn">もう一度挑戦！</button>
+            <div style="display: flex; gap: 16px;">
+                <button id="restart-btn" class="btn">もう一度挑戦！</button>
+                <button id="gameover-home-btn" class="btn" style="background: linear-gradient(135deg, #4b5563, #9ca3af);">タイトルへ戻る</button>
+            </div>
         </div>
 
         <!-- Victory Screen -->
         <div id="victory-screen" class="overlay hidden">
             <h1 class="title-text" style="background: linear-gradient(135deg, #00f0ff, #70e000, #ffea00); -webkit-background-clip: text;">STAGE CLEAR!! 🎉</h1>
             <p class="subtitle-text">見事に宝石を15個以上集めて世界を救った！<br>素晴らしい魔法使いの誕生だ！</p>
-            <button id="clear-restart-btn" class="btn">もう一度あそぶ！</button>
+            <div style="display: flex; gap: 16px;">
+                <button id="clear-restart-btn" class="btn">もう一度あそぶ！</button>
+                <button id="clear-home-btn" class="btn" style="background: linear-gradient(135deg, #4b5563, #9ca3af);">タイトルへ戻る</button>
+            </div>
         </div>
     </div>
 
@@ -364,6 +370,8 @@
         const startBtn = document.getElementById('start-btn');
         const restartBtn = document.getElementById('restart-btn');
         const clearRestartBtn = document.getElementById('clear-restart-btn');
+        const clearHomeBtn = document.getElementById('clear-home-btn');
+        const gameoverHomeBtn = document.getElementById('gameover-home-btn');
 
         // Sound System (Web Audio API Synthesizer)
         class SoundFX {
@@ -1224,6 +1232,20 @@
             initGame();
             gameState = 'PLAYING';
             victoryScreen.classList.add('hidden');
+        });
+
+        clearHomeBtn.addEventListener('click', () => {
+            initGame();
+            gameState = 'START';
+            victoryScreen.classList.add('hidden');
+            startScreen.classList.remove('hidden');
+        });
+
+        gameoverHomeBtn.addEventListener('click', () => {
+            initGame();
+            gameState = 'START';
+            gameoverScreen.classList.add('hidden');
+            startScreen.classList.remove('hidden');
         });
     </script>
 </body>
