@@ -691,11 +691,14 @@
 
             // Spawn Ghost (stop when boss is spawned)
             if (!bossSpawned) {
-                if (frameCount % 70 === 0) {
-                    spawnGhost();
+                if (frameCount % 35 === 0) {
+                    const spawnCount = Math.random() < 0.3 ? 2 : 1;
+                    for (let i = 0; i < spawnCount; i++) {
+                        spawnGhost();
+                    }
                 }
-                // Trigger Boss when 8 ghosts are defeated or time passes
-                if (ghostsKilled >= 8 || frameCount > 1800) {
+                // Trigger Boss when 12 ghosts are defeated or time passes
+                if (ghostsKilled >= 12 || frameCount > 1800) {
                     spawnBoss();
                 }
             }
